@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YUVRASTRA - Agro Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(to right, #00695c, #004d40);
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #b2dfdb;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, #004d40, #00796b);
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px 60px;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      animation: bounce 2s infinite;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+    }
+
+    .hero img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00796b;
+      margin-bottom: 40px;
+    }
+
+    .features, .team, .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      max-width: 300px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #004d40;
+    }
+
+    .card p {
+      color: #616161;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #00796b;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      background-color: #004d40;
+    }
+
+    .call-now-rectangle {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #d32f2f;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      animation: pulseBtn 1.8s infinite;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .call-now-rectangle:hover {
+      background-color: #b71c1c;
+    }
+
+    .call-now-rectangle i {
+      margin-right: 10px;
+    }
+
+    @keyframes pulseBtn {
+      0% {
+        box-shadow: 0 0 0 0 #d32f2f99;
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(211, 47, 47, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0);
+      }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      padding: 18px;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      animation: pulseWhatsapp 1.8s infinite;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulseWhatsapp {
+      0% {
+        box-shadow: 0 0 0 0 #25D366b3;
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>YUVRASTRA</h1>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#team">Our Team</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="text-align: center; padding: 40px 20px; background-color: #00796b;">
+  <h2 style="font-size: 4.2rem; color: white; margin-bottom: 15px;">जय जवान जय किसान</h2>
+  <p style="font-size: 1.1rem; color: #e0f2f1; max-width: 700px; margin: 0 auto;">
+    Empowering agriculture with modern, sustainable, and premium solutions.
+  </p>
+  <img src="Screenshot 2024-07-05 214922.png" alt="Our Achievements"
+       style="max-width: 100%; height: auto; margin-top: 25px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+</section>
+
+
+  <section class="section" id="features">
+    <h2>Features</h2>
+    <div class="features">
+      <div class="card">
+        <img src="images/feature1.jpg" alt="Feature 1">
+        <h3>Smart Technology</h3>
+        <p>Innovative agro-tech solutions for modern farming needs.</p>
+      </div>
+      <div class="card">
+        <img src="images/feature2.jpg" alt="Feature 2">
+        <h3>Eco-Friendly</h3>
+        <p>Environmentally responsible and sustainable practices.</p>
+      </div>
+      <div class="card">
+        <img src="images/feature3.jpg" alt="Feature 3">
+        <h3>24x7 Support</h3>
+        <p>Expert assistance available anytime for farmers.</p>
+      </div>
+    </div>
+  </section>
+    <section class="section" id="team">
+  <h2>Our Team</h2>
+  <div class="team" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+
+    <!-- Yuvraj Ghugare -->
+    <div id="yuvraj-card" class="card" style="width: 300px; transition: all 0.4s ease; text-align: center; padding: 10px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="IMG_0112.JPG" alt="Yuvraj Pramod Ghugare" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3>Yuvraj Pramod Ghugare</h3>
+      <p>Founder & CEO</p>
+      <button onclick="toggleBio()" style="background-color: #4CAF50; color: white; padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; margin-top: 8px;">
+        more info
+      </button>
+      <div id="bio" style="display: none; margin-top: 10px; text-align: left;">
+        <p><strong>Founder & CEO – YUVRASTRA - Agro Solution</strong></p>
+        <p>Yuvraj Ghugare is the 18-year-old Founder & CEO of YUVRASTRA - Agro Solution, a rising agro-tech brand dedicated to delivering innovative and practical solutions for the farming community. With a strong vision to modernize agriculture and support farmers across India, yuvraj brings youthful energy, leadership, and a deep-rooted passion for rural development. His dedication to empowering farmers through quality and service continues to drive the company forward.</p>
+      
+      </div>
+     <!-- Social Icons -->
+<div class="social-icons" style="display: flex; gap: 12px; justify-content: center; margin-top: 20px;">
+  <a href="mailto:yuvrastra@gmail.com" target="_blank" title="Email">
+    <i class="fas fa-envelope social-icon"></i>
+  </a>
+  <a href="https://www.instagram.com/pilot_yuvraj123" target="_blank" title="Instagram">
+    <i class="fab fa-instagram social-icon"></i>
+  </a>
+  <a href="https://www.facebook.com/yourprofile" target="_blank" title="Facebook">
+    <i class="fab fa-facebook-f social-icon"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin-in social-icon"></i>
+  </a>
+</div>
+
+<!-- Minimal CSS -->
+<style>
+  .social-icon {
+    font-size: 20px;         /* Small size */
+    color: #ffffff;          /* One consistent color */
+    transition: color 0.3s ease;
+  }
+
+  .social-icon:hover {
+    color: #4CAF50;          /* Optional hover color */
+  }
+
+  .social-icons a {
+    text-decoration: none;
+  }
+</style>
+
+    </div>
+
+    <!-- Sanika Tathurkar -->
+    <div class="card" style="width: 300px; text-align: center; padding: 10px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="IMG_9440.jpg" alt="Sanika Tathurkar" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3>sandhya ghugare</h3>
+      <p>Co-Founder</p>
+      <button onclick="toggleBio()" style="background-color: #4CAF50; color: white; padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; margin-top: 8px;">
+        more info
+      </button>
+      <div id="bio" style="display: none; margin-top: 10px; text-align: left;">
+        <p><strong>Co-Founder – YUVRASTRA - Agro Solution</strong></p>
+        <p> hello iam here!</p>
+    </div>
+    <div 
+    <!-- Social Icons -->
+<div class="social-icons" style="display: flex; gap: 12px; justify-content: center; margin-top: 20px;">
+  <a href="mailto:yuvrastra@gmail.com" target="_blank" title="Email">
+    <i class="fas fa-envelope social-icon"></i>
+  </a>
+  <a href="https://www.instagram.com/pilot_yuvraj123" target="_blank" title="Instagram">
+    <i class="fab fa-instagram social-icon"></i>
+  </a>
+  <a href="https://www.facebook.com/yourprofile" target="_blank" title="Facebook">
+    <i class="fab fa-facebook-f social-icon"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin-in social-icon"></i>
+  </a>
+</div>
+
+<!-- Minimal CSS -->
+<style>
+  .social-icon {
+    font-size: 20px;         /* Small size */
+    color: #ffffff;          /* One consistent color */
+    transition: color 0.3s ease;
+  }
+
+  .social-icon:hover {
+    color: #4CAF50;          /* Optional hover color */
+  }
+
+  .social-icons a {
+    text-decoration: none;
+  }
+</style>
+</div>
+    
+  </div>
+</section>
+
+<script>
+  function toggleBio() {
+    const bio = document.getElementById("bio");
+    bio.style.display = bio.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+
+  </div>
+</section>
+
+<style>
+  .team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #4CAF50;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover img {
+    transform: scale(1.05);
+  }
+
+  .card h3 {
+    font-size: 18px;
+    color: #222;
+    margin: 10px 0 5px;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+
+
+
+
+  <section class="section" id="products">
+    <h2>Products</h2>
+    <div class="products">
+      <div class="card">
+        <img src="logo 2.png" alt="Product 1">
+        <h3>Organic Fertilizer</h3>
+        <p>Boost soil fertility naturally.</p>
+        <a href="product1.html">more info</a>
+      </div>
+      <div class="card">
+        <img src="pro.png" alt="Product 2">
+        <h3>Hybrid Seeds</h3>
+        <p>High-yield seeds for diverse climates.</p>
+        <a href="product2.html">more info</a>
+      </div>
+    </div>
+  </section>
+<section class="section contact" id="contact">
+  <h2>Contact Us</h2>
+
+  </div>
+
+  <div class="social-icons">
+    <a href="mailto:yuvrastra@gmail.com" target="_blank" class="email" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="tel:+918261800991" target="_blank" class="phone" title="Call">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="https://www.instagram.com/pilot_yuvraj123" target="_blank" class="instagram" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/yourprofile" target="_blank" class="facebook" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="linkedin" title="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://wa.me/918261800991" target="_blank" class="whatsapp" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+  .contact {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f5f5f5, #e0f7e9);
+    border-top: 4px solid #4CAF50;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .contact h2 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .contact-details p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    color: #333;
+  }
+
+  .contact-details a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .social-icons a:hover {
+    transform: scale(2.4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Custom Icon Backgrounds */
+  .social-icons .email { background-color: #D44638; }
+  .social-icons .phone { background-color: #007BFF; }
+  .social-icons .instagram { background-color: #E4405F; }
+  .social-icons .facebook { background-color: #3b5998; }
+  .social-icons .linkedin { background-color: #0e76a8; }
+  .social-icons .whatsapp { background-color: #25D366; }
+</style>
+
+
+  
+
+
+  <a href="https://wa.me/918261800991" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+  <footer style="background-color: #004d40; color: white; padding: 30px 20px; text-align: center; margin-top: 60px;">
+  <div style="max-width: 800px; margin: auto;">
+    <h3 style="margin-bottom: 10px;">YUVRASTRA - Agro Solution</h3>
+    <p style="margin: 0 0 10px;">Empowering Indian Farmers with Innovative Agro Products</p>
+    
+   <p style="font-size: 0.9rem; color: #ccc;">© 2025 YUVRASTRA. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html> 

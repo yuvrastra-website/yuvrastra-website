@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Organic Fertilizer - YUVRASTRA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #e0f2f1, #ffffff);
+      color: #004d40;
+      padding: 40px 20px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #009688;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .buy-btn, .order-btn {
+      display: inline-block;
+      background-color: #00796b;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      border: none;
+    }
+
+    .buy-btn:hover, .order-btn:hover {
+      background-color: #004d40;
+    }
+
+    form {
+      margin-top: 20px;
+      display: none;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .total-price {
+      font-weight: bold;
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    #upiLink {
+      margin-top: 20px;
+      display: none;
+    }
+
+    /* Floating Buttons */
+    .call-now-rectangle {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #c62828;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      animation: pulseBtn 1.8s infinite;
+      text-decoration: none;
+    }
+
+    .call-now-rectangle:hover {
+      background-color: #b71c1c;
+    }
+
+    @keyframes pulseBtn {
+      0% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.5); }
+      70% { box-shadow: 0 0 0 20px rgba(198, 40, 40, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0); }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      padding: 18px;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      animation: pulseWhatsapp 1.8s infinite;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulseWhatsapp {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Scrolling gallery */
+    .scroll-gallery {
+      max-width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      margin: 0 auto 30px;
+      padding: 10px 0;
+    }
+
+    .scroll-gallery img {
+      height: 180px;
+      margin-right: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    /* Responsive video */
+    .video-container {
+      max-width: 100%;
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Product Image Scrolling Gallery -->
+  <div class="scroll-gallery">
+    <img src="images/product1.jpg" alt="Image 1">
+    <img src="images/product2.jpg" alt="Image 2">
+    <img src="images/product3.jpg" alt="Image 3">
+    <img src="images/product4.jpg" alt="Image 4">
+  </div>
+
+  <!-- Video Section -->
+  <div class="video-container">
+    <h2 style="color: #00796b;">Watch Product in Action</h2>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+      title="YUVRASTRA Product Video" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+
+  <div class="container">
+    <h1>Organic Fertilizer</h1>
+    <h2>₹4499 per unit</h2>
+    <img src="images/product1.jpg" alt="Organic Fertilizer" />
+    <p>Boost your farm's soil with premium organic nutrients.</p>
+
+    <!-- Buy Now button -->
+    <button class="buy-btn" onclick="showForm()">Buy Now</button>
+
+    <!-- Customer Details Form -->
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="tel" id="phone" placeholder="Mobile Number" required />
+      <textarea id="address" placeholder="Delivery Address" required></textarea>
+
+      <label for="qty">Quantity</label>
+      <select id="qty" onchange="updateTotal()" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+      </select>
+
+      <div class="total-price">Total: ₹<span id="totalAmount">4499</span></div>
+
+      <button type="submit" class="order-btn">Place Order</button>
+    </form>
+
+    <!-- UPI Link -->
+    <div id="upiLink">
+      <a id="paymentBtn" class="buy-btn" target="_blank">Pay Now via UPI</a>
+      <p style="color: gray; font-size: 0.9rem;">* Works on mobile UPI apps like GPay, PhonePe</p>
+    </div>
+  </div>
+
+  <!-- Floating Buttons -->
+  <a href="tel:+918261800991" class="call-now-rectangle" title="Call Now">
+    <i class="fas fa-phone-alt"></i> Call Now
+  </a>
+
+  <a href="https://wa.me/918261800991" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    const upiLinkDiv = document.getElementById('upiLink');
+    const payBtn = document.getElementById('paymentBtn');
+    const qtySelect = document.getElementById('qty');
+    const totalAmountSpan = document.getElementById('totalAmount');
+
+    const unitPrice = 4499;
+
+    function showForm() {
+      form.style.display = 'block';
+      window.scrollTo({ top: form.offsetTop, behavior: 'smooth' });
+    }
+
+    function updateTotal() {
+      const qty = parseInt(qtySelect.value);
+      totalAmountSpan.textContent = qty * unitPrice;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const qty = parseInt(qtySelect.value);
+      const amount = qty * unitPrice;
+
+      if (!name || !phone || !address || !qty) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      const note = encodeURIComponent(`Order x${qty} by ${name}, ${phone}`);
+      const upiLink = `upi://pay?pa=sandhya@ybl&pn=YUVRASTRA&am=${amount}&cu=INR&tn=${note}`;
+
+      payBtn.href = upiLink;
+      upiLinkDiv.style.display = 'block';
+      alert("Order recorded! Click below to pay via UPI.");
+    });
+  </script>
+
+</body>
+</html>
